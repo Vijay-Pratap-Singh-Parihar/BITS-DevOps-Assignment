@@ -33,4 +33,5 @@ def add_member():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    # Bind 0.0.0.0 so the app is reachable from Docker port mappings and local clients.
+    app.run(host="0.0.0.0", port=5000, debug=True)
