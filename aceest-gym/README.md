@@ -2,6 +2,16 @@
 
 Minimal Flask backend for gym/fitness member management (in-memory storage).
 
+## Project Structure Note
+
+The Flask application resides inside the `aceest-gym/` directory.
+
+All commands below should be executed from inside this folder:
+
+```bash
+cd aceest-gym
+```
+
 ## Setup
 
 1. Create and activate a virtual environment (recommended):
@@ -50,10 +60,11 @@ The server listens on `http://127.0.0.1:5000` by default.
 
 ### GitHub Actions
 
-- Triggered on every push and pull request
+- Triggered on every push to the main branch and on pull requests
 - Installs dependencies
 - Runs pytest test suite
 - Builds Docker image
+- Ensures code quality before merge
 
 ### Jenkins
 
@@ -61,7 +72,7 @@ The server listens on `http://127.0.0.1:5000` by default.
 - Installs dependencies
 - Runs test suite
 - Builds Docker image
-- Acts as secondary validation layer
+- Acts as an independent secondary validation layer
 
 ## Running Tests
 
