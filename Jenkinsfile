@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PYTHONUNBUFFERED = '1'
+    }
+
     options {
         timestamps()
     }
@@ -24,7 +28,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 dir('aceest-gym') {
-                    sh 'python3 -m pytest -v'
+                    sh 'export PYTHONPATH=$(pwd) && python3 -m pytest -v'
                 }
             }
         }
